@@ -1,3 +1,4 @@
+
 <template>
   <form @submit.prevent="submitForm" >
     <label>Username</label>
@@ -62,7 +63,7 @@ import {onMounted} from 'vue'
       store.dispatch('submitForm', formData); // Dispatch the submitForm action with form data
       router.push('/LoggedIn'); // Navigate to the 'LoggedIn' component
     };
-    
+    // update state attributes 
     const updateAttributes = () => {
       const newAttributes = {password:password.value, VehicleNumber: VehicleNumber.value, Vehicle: Vehicle.value, UserName: UserName.value };
       store.commit('updateAttributes', newAttributes);

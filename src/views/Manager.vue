@@ -22,7 +22,7 @@ const searchQuery = ref('');
 const searchResults = ref([]);
 
 const socket = io('http://localhost:3000'); 
-
+//Search for the bus or the driver by making request to server with axios 
 const search = async () => {
   try {
     const response = await axios.get(`http://localhost:3000/search?query=${encodeURIComponent(searchQuery.value)}`);

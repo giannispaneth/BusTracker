@@ -66,6 +66,7 @@ const store = createStore({
         console.error('Error:', error);
       }
     },
+    // Sent position using navigator geolocation
     async sendPosition({ state }) {
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
@@ -84,6 +85,7 @@ const store = createStore({
             state.attributes.longitude = position.longitude;
             state.attributes.accuracy = position.accuracy;
           },
+          // Catching the error if geolocation maybe not supported by the browser
           (error) => {
             console.error('Error getting geolocation:', error);
             state.attributes.socket.emit('updatePosition', {
@@ -104,7 +106,7 @@ const store = createStore({
         console.error('Geolocation is not supported by this browser.');
       }
     }
-    // ... other actions
+    
   }
 });
 

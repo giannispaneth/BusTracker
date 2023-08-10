@@ -1,9 +1,10 @@
 <template>
   <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
+    <router-link to="/Manager">Manager Page</router-link> |
+    <router-link to="/Driver">Driver Login Page</router-link> |
+    <router-link to="/LoggedIn">Driver Login Page</router-link> |
   <router-view/>
+  </nav>
 </template>
 
 <style>
